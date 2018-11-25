@@ -1,0 +1,9 @@
+[{
+  "slug": "first-enigma",
+  "component": "First",
+  "name": "First"
+}, {
+  "slug": "second-enigma",
+  "component": "Second",
+  "name": "Second"
+}]
