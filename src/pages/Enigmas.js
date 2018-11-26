@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from "react-router-dom";
+
 import enigmas from '../data/enigmas.json';
 
 import * as components from './enigmas/index';
@@ -24,6 +26,8 @@ class Enigmas extends Component {
             Enigmas
           </p>
         </header>
+
+        <Link to='/'>Go To Home</Link>
 
         <$ComponentEnigma />
       </div>
