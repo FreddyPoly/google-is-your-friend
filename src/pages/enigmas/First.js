@@ -3,13 +3,35 @@ import React, { Component } from 'react';
 import Radium from 'radium';
 
 class First extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      response: '',
+    };
+  }
+
+  _handleSubmit = () => {
+    if (this.state.response.toLowerCase() === 'in the answer') {
+      alert('gagné');
+    }
+  }
+
+  _respond = (event) => {
+    this.setState({ response: event.target.value });
+  }
+
   render() {
     return (
       <div className="First">
         <div style={styles.container}>
           <h3 style={styles.title}>The answer is in the question</h3>
 
-          <input style={styles.inputText} type="text"/>
+          <form onSubmit={this._handleSubmit}>
+            <input style={styles.inputText} type="text" value={this.state.response} onChange={this._respond} />
+
+            <input type="submit" value="Valider" />
+          </form>
         </div>
       </div>
     );
