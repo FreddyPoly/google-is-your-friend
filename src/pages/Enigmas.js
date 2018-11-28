@@ -23,7 +23,7 @@ class Enigmas extends Component {
     return (
       <div className="Enigmas">
         <header style={{ display: 'flex', justifyContent: 'center'}}>
-          <h2 style={{ fontSize: 64, color: 'white'}}>
+          <h2 style={{ fontSize: 42, color: '#c6b251', backgroundColor: 'white', paddingTop: 10, paddingBottom: 10, width: '50%', textAlign: 'center'}}>
             { currentEnigma.name }
           </h2>
         </header>
@@ -38,8 +38,8 @@ class Enigmas extends Component {
           backgroundImage: `url(${fond})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
-          opacity: .65,
           position: 'absolute',
+          opacity: .9,
           top: 0,
           zIndex: -1,
         }}></div>

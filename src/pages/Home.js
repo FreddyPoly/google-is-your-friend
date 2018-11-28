@@ -63,7 +63,7 @@ class Home extends Component {
           backgroundImage: `url(${fond})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
-          opacity: .65,
+          opacity: .9,
           position: 'absolute',
           top: 0,
           zIndex: -1,
