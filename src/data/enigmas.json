@@ -1,7 +1,7 @@
 [{
   "slug": "first-enigma",
   "component": "First",
-  "name": "First"
+  "name": "The simplest enigma of all time"
 }, {
   "slug": "second-enigma",
   "component": "Second",

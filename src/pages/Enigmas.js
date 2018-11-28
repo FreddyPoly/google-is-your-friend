@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
 
 import { Link } from "react-router-dom";
 
@@ -22,30 +23,52 @@ class Enigmas extends Component {
 
     return (
       <div className="Enigmas">
-        <header style={{ display: 'flex', justifyContent: 'center'}}>
-          <h2 style={{ fontSize: 42, color: '#c6b251', backgroundColor: 'white', paddingTop: 10, paddingBottom: 10, width: '50%', textAlign: 'center'}}>
+        <header style={styles.containerHeader}>
+          <h2 style={styles.title}>
             { currentEnigma.name }
           </h2>
         </header>
 
-        <Link style={{position: 'absolute', top: 40, left: 20}} to='/'>Go To Home</Link>
+        <Link style={styles.btnBack} to='/'>Go To Home</Link>
 
         <$ComponentEnigma />
 
-        <div style={{
-          width: '100%',
-          height: '100%',
-          backgroundImage: `url(${fond})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          position: 'absolute',
-          opacity: .9,
-          top: 0,
-          zIndex: -1,
-        }}></div>
+        <div style={styles.background}></div>
       </div>
     );
   }
 }
 
-export default Enigmas;
+const styles = {
+  containerHeader: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 42,
+    color: '#c6b251',
+    backgroundColor: 'white',
+    paddingTop: 10,
+    paddingBottom: 10,
+    width: '50%',
+    textAlign: 'center',
+  },
+  btnBack: {
+    position: 'absolute',
+    top: 40,
+    left: 20,
+  },
+  background: {
+    width: '100%',
+    height: '100%',
+    backgroundImage: `url(${fond})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    position: 'absolute',
+    opacity: .9,
+    top: 0,
+    zIndex: -1,
+  },
+};
+
+export default Radium(Enigmas);
