@@ -58,6 +58,13 @@ const styles = {
     borderRight: 0,
     borderLeft: 0,
     height: 42,
+    fontSize: 32,
+    color: 'white',
+    caretColor: 'white',
+    caretWidth: 4,
+    ':focus': {
+      outline: 'none'
+    }
   },
 }
 
