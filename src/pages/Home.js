@@ -3,22 +3,12 @@ import { Link } from "react-router-dom";
 
 import enigmas from '../data/enigmas.json';
 
-const generalContainer = {
-  height: '100vh',
-  backgroundColor: '#BFBFBF',
-};
+import fond from '../assets/fond.jpg';
 
 const titleContainer = {
   display: 'flex',
   justifyContent: 'center',
-};
-
-const title = {
-  fontSize: '72px',
-  alignSelf: 'center',
-  color: 'white',
-  fontFamily: 'Noto Sans',
-  fontWeight: '700',
+  flexDirection: 'column',
 };
 
 const enigmasContainer = {
@@ -38,9 +28,25 @@ const enigmaLink = {
 class Home extends Component {
   render() {
     return (
-      <div className="Home" style={generalContainer}>
+      <div className="Home" style={{ height: '100vh' }}>
         <div style={titleContainer}>
-          <h1 style={title}>Google is your friend</h1>
+          <h1 style={{
+            fontSize: '140px',
+            alignSelf: 'center',
+            color: 'white',
+            fontFamily: 'Noto Sans',
+            fontWeight: '500',
+            marginBottom: 0,
+            marginTop: 32,
+          }}>Google</h1>
+          <h1 style={{
+            fontSize: '72px',
+            alignSelf: 'center',
+            color: 'white',
+            fontFamily: 'Noto Sans',
+            fontWeight: '700',
+            marginTop: 0,
+          }}>is your friend</h1>
         </div>
 
         <div style={enigmasContainer}>
@@ -48,6 +54,18 @@ class Home extends Component {
             <Link to={`/enigmas/${enigma.slug}`} key={enigma.slug} style={enigmaLink}>Enigmas {enigma.name}</Link>
           ))}
         </div>
+
+        <div style={{
+          width: '100%',
+          height: '100%',
+          backgroundImage: `url(${fond})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          opacity: .65,
+          position: 'absolute',
+          top: 0,
+          zIndex: -1,
+        }}></div>
       </div>
     );
   }
