@@ -20,9 +20,11 @@ const enigmasContainer = {
 const enigmaLink = {
   margin: 48,
   textAlign: 'center',
-  backgroundColor: 'gold',
   padding: 12,
-  borderRadius: 8,
+  borderRadius: 4,
+  backgroundColor: '#D6BD9C',
+  textDecoration: 'none',
+  boxShadow: '1px 1px 1px #373737',
 };
 
 class Home extends Component {
@@ -51,7 +53,7 @@ class Home extends Component {
 
         <div style={enigmasContainer}>
           {enigmas.map((enigma) => (
-            <Link to={`/enigmas/${enigma.slug}`} key={enigma.slug} style={enigmaLink}>Enigmas {enigma.name}</Link>
+            <Link to={`/enigmas/${enigma.slug}`} key={enigma.slug} style={enigmaLink}>{enigma.name}</Link>
           ))}
         </div>
 
