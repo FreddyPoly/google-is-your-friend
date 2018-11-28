@@ -11,10 +11,14 @@ class First extends Component {
     };
   }
 
-  _handleSubmit = () => {
-    if (this.state.response.toLowerCase() === 'in the answer') {
+  _handleSubmit = (event) => {
+    if (this.state.response.toLowerCase() === 'in the question') {
       alert('gagné');
+
+      this.setState({ response: '' });
     }
+
+    event.preventDefault();
   }
 
   _respond = (event) => {
@@ -27,10 +31,12 @@ class First extends Component {
         <div style={styles.container}>
           <h3 style={styles.title}>The answer is in the question</h3>
 
-          <form onSubmit={this._handleSubmit}>
+          <form style={styles.form} onSubmit={this._handleSubmit}>
             <input style={styles.inputText} type="text" value={this.state.response} onChange={this._respond} />
 
-            <input type="submit" value="Valider" />
+            <div style={styles.btnContainer}>
+              <button style={styles.btnValidate} type="submit">Valider</button>
+            </div>
           </form>
         </div>
       </div>
@@ -47,6 +53,25 @@ const styles = {
     textAlign: 'center',
     fontSize: 32,
     color: '#c6b251',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  btnContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  btnValidate: {
+    marginTop: 64,
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 50,
+    paddingRight: 50,
+    backgroundColor: '#c6b251',
+    fontSize: 24,
+    color: 'white',
+    fontWeight: '700',
   },
   inputText: {
     alignSelf: 'center',
