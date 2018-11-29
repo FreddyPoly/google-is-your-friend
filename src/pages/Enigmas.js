@@ -30,7 +30,13 @@ class Enigmas extends Component {
 
         <Link style={styles.btnBack} to='/'>Go To Home</Link>
 
-        <$ComponentEnigma />
+        <div style={{
+          justifyContent: 'center',
+          position: 'relative',
+          top: '10%',
+        }}>
+          <$ComponentEnigma />
+        </div>
       </div>
     );
   }
@@ -39,6 +45,8 @@ class Enigmas extends Component {
 const styles = {
   container: {
     height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
   },
   containerHeader: {
     display: 'flex',

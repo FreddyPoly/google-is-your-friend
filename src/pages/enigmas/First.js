@@ -8,6 +8,7 @@ class First extends Component {
 
     this.state = {
       response: '',
+      btnValidateHover: false,
     };
   }
 
@@ -29,13 +30,30 @@ class First extends Component {
     return (
       <div className="First">
         <div style={styles.container}>
-          <h3 style={styles.title}>The answer is in the question</h3>
+          <p style={styles.title}>The answer is in the question</p>
 
           <form style={styles.form} onSubmit={this._handleSubmit}>
             <input style={styles.inputText} type="text" value={this.state.response} onChange={this._respond} />
 
-            <div style={styles.btnContainer}>
-              <button style={styles.btnValidate} type="submit">VALIDER</button>
+            <div
+              style={styles.btnContainer}
+              onMouseLeave={() => this.setState({ btnValidateHover: false })}
+              onMouseEnter={() => this.setState({ btnValidateHover: true })}>
+              <button
+                style={{
+                  marginTop: 64,
+                  fontSize: 24,
+                  color: this.state.btnValidateHover ? '#373737' : 'white',
+                  fontWeight: '700',
+                  fontFamily: 'Courier New',
+                  border: '1px solid white',
+                  cursor: 'pointer',
+                  padding: 5,
+                  backgroundColor: this.state.btnValidateHover ? '#00FF00' : 'transparent',
+                }}
+                type="submit">
+                VALIDER
+              </button>
             </div>
           </form>
         </div>
@@ -62,13 +80,6 @@ const styles = {
   btnContainer: {
     display: 'flex',
     justifyContent: 'center',
-  },
-  btnValidate: {
-    marginTop: 64,
-    fontSize: 24,
-    color: 'white',
-    fontWeight: '700',
-    fontFamily: 'Courier New',
   },
   inputText: {
     fontFamily: 'Courier New',
