@@ -4,7 +4,6 @@ import Radium from 'radium';
 import { Link } from "react-router-dom";
 
 import enigmas from '../data/enigmas.json';
-import fond from '../assets/fond.jpg';
 
 import * as components from './enigmas/index';
 
@@ -22,7 +21,7 @@ class Enigmas extends Component {
     const $ComponentEnigma = components[currentEnigma.component];
 
     return (
-      <div className="Enigmas">
+      <div className="Enigmas" style={styles.container}>
         <header style={styles.containerHeader}>
           <h2 style={styles.title}>
             { currentEnigma.name }
@@ -32,42 +31,32 @@ class Enigmas extends Component {
         <Link style={styles.btnBack} to='/'>Go To Home</Link>
 
         <$ComponentEnigma />
-
-        <div style={styles.background}></div>
       </div>
     );
   }
 }
 
 const styles = {
+  container: {
+    height: '100vh',
+  },
   containerHeader: {
     display: 'flex',
     justifyContent: 'center',
   },
   title: {
+    fontFamily: 'Courier New',
     fontSize: 42,
-    color: '#c6b251',
-    backgroundColor: 'white',
-    paddingTop: 10,
-    paddingBottom: 10,
-    width: '50%',
+    color: '#00ff00',
     textAlign: 'center',
   },
   btnBack: {
+    fontFamily: 'Courier New',
+    color: 'white',
+    textDecoration: 'none',
     position: 'absolute',
     top: 40,
     left: 20,
-  },
-  background: {
-    width: '100%',
-    height: '100%',
-    backgroundImage: `url(${fond})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    position: 'absolute',
-    opacity: .9,
-    top: 0,
-    zIndex: -1,
   },
 };
 

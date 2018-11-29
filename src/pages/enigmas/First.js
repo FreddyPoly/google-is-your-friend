@@ -35,7 +35,7 @@ class First extends Component {
             <input style={styles.inputText} type="text" value={this.state.response} onChange={this._respond} />
 
             <div style={styles.btnContainer}>
-              <button style={styles.btnValidate} type="submit">Valider</button>
+              <button style={styles.btnValidate} type="submit">VALIDER</button>
             </div>
           </form>
         </div>
@@ -50,9 +50,10 @@ const styles = {
     flexDirection: 'column'
   },
   title: {
+    fontFamily: 'Courier New',
     textAlign: 'center',
     fontSize: 32,
-    color: '#c6b251',
+    color: 'white',
   },
   form: {
     display: 'flex',
@@ -64,16 +65,13 @@ const styles = {
   },
   btnValidate: {
     marginTop: 64,
-    paddingTop: 15,
-    paddingBottom: 15,
-    paddingLeft: 50,
-    paddingRight: 50,
-    backgroundColor: '#c6b251',
     fontSize: 24,
     color: 'white',
     fontWeight: '700',
+    fontFamily: 'Courier New',
   },
   inputText: {
+    fontFamily: 'Courier New',
     alignSelf: 'center',
     width: '60%',
     backgroundColor: 'transparent',
