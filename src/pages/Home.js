@@ -4,8 +4,6 @@ import Radium from 'radium';
 
 import enigmas from '../data/enigmas.json';
 
-import fond from '../assets/fond.jpg';
-
 class Home extends Component {
   render() {
     return (
@@ -20,8 +18,6 @@ class Home extends Component {
             <Link to={`/enigmas/${enigma.slug}`} key={enigma.slug} style={styles.enigmaLink}>{enigma.name}</Link>
           ))}
         </div>
-
-        <div style={styles.background}></div>
       </div>
     );
   }
@@ -35,8 +31,8 @@ const styles = {
   },
   title: {
     alignSelf: 'center',
-    color: 'white',
-    fontFamily: 'Noto Sans',
+    color: '#00ff00',
+    fontFamily: 'Courier New',
     fontWeight: '500',
   },
   titleFirstLine: {
@@ -45,7 +41,7 @@ const styles = {
     marginTop: 32,
   },
   titleSecondLine: {
-    fontSize: '72px',
+    fontSize: '60px',
     marginBottom: 32,
     marginTop: 0,
   },
@@ -55,25 +51,11 @@ const styles = {
     gridTemplateRows: '120 50',
   },
   enigmaLink: {
+    color: 'white',
     margin: 48,
     textAlign: 'center',
-    padding: 12,
-    borderRadius: 4,
-    backgroundColor: '#D6BD9C',
     textDecoration: 'none',
-    boxShadow: '1px 1px 1px #373737',
   },
-  background: {
-    width: '100%',
-    height: '100%',
-    backgroundImage: `url(${fond})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    opacity: .9,
-    position: 'absolute',
-    top: 0,
-    zIndex: -1,
-  }
 }
 
 export default Radium(Home);
