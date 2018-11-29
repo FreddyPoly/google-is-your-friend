@@ -52,6 +52,8 @@ const styles = {
   },
   enigmaLink: {
     color: 'white',
+    fontFamily: 'Courier New',
+    fontSize: 16,
     margin: 48,
     textAlign: 'center',
     textDecoration: 'none',
